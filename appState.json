@@ -1,0 +1,134 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "f01b7b30-eead-4d3d-8655-0096d863f2ab": {
+        "id": "f01b7b30-eead-4d3d-8655-0096d863f2ab",
+        "parent": null,
+        "name": "hiru307gcpsmoke",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "914b77d0-9825-4232-832c-9da0c9d0636e",
+          "fd922b1f-155e-4035-8a3a-bebd761d6da7"
+        ],
+        "isRemovable": false,
+        "filePath": "hiru307gcpsmoke"
+      },
+      "914b77d0-9825-4232-832c-9da0c9d0636e": {
+        "id": "914b77d0-9825-4232-832c-9da0c9d0636e",
+        "parent": "f01b7b30-eead-4d3d-8655-0096d863f2ab",
+        "name": "function.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru307gcpsmoke/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 1
+        },
+        "triggers": [
+          {
+            "resourceName": "pubsubcloudBuilds",
+            "config": {}
+          }
+        ]
+      },
+      "b40a034a-a24b-4566-b4b4-f9d23fff5e08": {
+        "id": "b40a034a-a24b-4566-b4b4-f9d23fff5e08",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.hiru307gcpsmokefunction = require(\"./hiru307gcpsmoke/function.js\").handler;\nexports.hiru307gcpsmokedependancy = require(\"./hiru307gcpsmoke/dependancy.js\").handler;"
+      },
+      "fd922b1f-155e-4035-8a3a-bebd761d6da7": {
+        "id": "fd922b1f-155e-4035-8a3a-bebd761d6da7",
+        "parent": "f01b7b30-eead-4d3d-8655-0096d863f2ab",
+        "name": "dependancy.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru307gcpsmoke/dependancy.js",
+        "code": "let faker = require('faker');\nexports.handler = function(request, response) {\n    \n    response.send({\"message\": faker.internet.userName()});\n}",
+        "config": {
+          "runtime": "nodejs10",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 0
+        },
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "7dd96e13-61b0-4c83-91c6-dfcd5209a5a2": {
+            "id": "7dd96e13-61b0-4c83-91c6-dfcd5209a5a2",
+            "name": "Unnamed event",
+            "functionId": "fd922b1f-155e-4035-8a3a-bebd761d6da7",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "f01b7b30-eead-4d3d-8655-0096d863f2ab",
+    "openFiles": [
+      "914b77d0-9825-4232-832c-9da0c9d0636e",
+      "fd922b1f-155e-4035-8a3a-bebd761d6da7"
+    ],
+    "currentFileId": "fd922b1f-155e-4035-8a3a-bebd761d6da7",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      },
+      "pubsubcloudBuilds": {
+        "name": "pubsubcloudBuilds",
+        "type": "pubsub",
+        "config": {
+          "mode": 1,
+          "topic": {
+            "name": "cloud-builds",
+            "subscriptions": []
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "hiru307gcpsmoke",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-central1",
+    "platform": "GCP",
+    "platformRegions": {},
+    "lastSave": 1564467464463
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "hiru307gcpsmoke",
+      "url": "https://github.com/HirudineeADRT/hiru307gcpsmoke",
+      "branches": []
+    }
+  }
+}
