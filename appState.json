@@ -57,7 +57,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru307gcpsmoke/dependancy.js",
-        "code": "let faker = require('faker');\nlet moment = require('moment');\n\nexports.handler = function (request, response) {\n\n    response.send({ \"message\": faker.internet.userName()+ moment().format(\"MMMM Do YYYY\") });\n}",
+        "code": "let faker = require('faker');\nlet moment = require('moment');\n\nexports.handler = function (request, response) {\n\n    response.send({ \"message\": faker.internet.userName() + moment().format(\"MMMM Do YYYY\") });\n}",
         "config": {
           "runtime": "nodejs10",
           "timeout": 60,
@@ -132,7 +132,7 @@
     "projectRegion": "us-central1",
     "platform": "GCP",
     "platformRegions": {},
-    "lastSave": 1564472428012
+    "lastSave": 1564472501620
   },
   "VCS_STATE": {
     "provider": "GitHub",
